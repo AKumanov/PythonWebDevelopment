@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phones</title>
+</head>
+<body>
+<h1>Phones List</h1>
+<ul>
+    {% for phone in phones %}
+        {% if phone.quantity %}
+        <li><h3>{{ phone.name }}</h3></li>
+        <p>The {{ phone.name }} is with a price of {{ phone.price }} and has currently {{ phone.quantity }} items on
+            stock</p>
+        {% endif %}
+    {% endfor %}
+
+
+</ul>
+</body>
+</html>
