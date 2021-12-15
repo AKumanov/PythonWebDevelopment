@@ -1,12 +1,10 @@
 from django.shortcuts import render
-from Django101.myApp.models import Person, BlogPost, Phone
+from Django101.myApp.models import BlogPost, Phone, Person
 
 
 def index(request):
     context = {
         'name': 'Alexander',
-        'people': Person.objects.all(),
-        'posts': BlogPost.objects.all(),
 
     }
     return render(request, 'index.html', context)
@@ -21,6 +19,7 @@ def list_phones(request):
 
 def blog_post(request):
     context = {
-        'posts': BlogPost.objects.all()
+        'posts': BlogPost.objects.all(),
+        'name': 'Alexander',
     }
     return render(request, 'blog.html', context)

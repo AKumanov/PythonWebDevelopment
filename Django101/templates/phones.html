@@ -6,15 +6,28 @@
 </head>
 <body>
 <h1>Phones List</h1>
-{% for phone in phone %}
-    {% if phone.quantity %}
-    <ul>
-    <li><h3>{{ phone.name }}</h3></li>
-    <p>This phone is manufactured by {{ phone.manufacturer }}</p>
-    <p>Currently in stock: {{ phone.quantity }}</p>
-    </ul>
-    {% endif %}
-{% endfor %}
+<ul>
+    {% for phone in phone %}
+        {% if phone.quantity %}
+
+            <li><h3>{{ phone.name }}</h3></li>
+            <p>This phone is manufactured by {{ phone.manufacturer }}</p>
+            <p>Currently in stock: {{ phone.quantity }}</p>
+
+        {% endif %}
+    {% endfor %}
+</ul>
+<h2>Phones currently we don't have in stock:</h2>
+<ul>
+    {% for phone in phone %}
+        {% if not phone.quantity %}
+            <li><h3>{{ phone.name }}</h3></li>
+            <p>This phone is manufactured by {{ phone.manufacturer }}</p>
+            <p>Expected to be available for purchase soon</p>
+        {% endif %}
+    {% endfor %}
+
+</ul>
 
 </body>
 </html>
