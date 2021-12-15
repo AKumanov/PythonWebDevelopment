@@ -5,8 +5,11 @@ import Django101
 from Django101.myApp import urls
 from Django101.myApp.views import index
 
-urlpatterns = {
+urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('', index),
-    path('phones/', include(Django101.myApp.urls))
-}
+    path('', include('Django101.myApp.urls')),
+    path('', include('Django101.myApp.urls')),
+
+]

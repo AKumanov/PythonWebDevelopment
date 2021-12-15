@@ -1,7 +1,9 @@
 from django.urls import path
 
-from Django101.myApp.views import list_phones
+from django.contrib import admin
+from Django101.myApp.views import list_phones, blog_post
 
 urlpatterns = [
-    path('', list_phones)
+    path('phones/', list_phones),
+    path('blog/', blog_post),
 ]

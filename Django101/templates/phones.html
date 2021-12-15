@@ -6,17 +6,15 @@
 </head>
 <body>
 <h1>Phones List</h1>
-<ul>
-    {% for phone in phones %}
-        {% if phone.quantity %}
-        <li><h3>{{ phone.name }}</h3></li>
-        <p>The {{ phone.name }} is with a price of {{ phone.price }} and has currently {{ phone.quantity }} items on
-            stock</p>
-            <a href="">Buy</a>
-        {% endif %}
-    {% endfor %}
+{% for phone in phone %}
+    {% if phone.quantity %}
+    <ul>
+    <li><h3>{{ phone.name }}</h3></li>
+    <p>This phone is manufactured by {{ phone.manufacturer }}</p>
+    <p>Currently in stock: {{ phone.quantity }}</p>
+    </ul>
+    {% endif %}
+{% endfor %}
 
-
-</ul>
 </body>
 </html>
