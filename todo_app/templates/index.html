@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+</head>
+<body>
+<h1>Hello, my name is {{ name }}, and I am {{ age }} years old. Welcome!</h1>
+{% for todo in todos %}
+
+    <h3>{{ todo.title }}</h3>
+    <p>{{ todo.description }}</p>
+    <h4>{{ todo.owner }}</h4>
+    <h5>{{ todo.priority }}</h5>
+    <hr>
+
+{% endfor %}
+
+</body>
+</html>
